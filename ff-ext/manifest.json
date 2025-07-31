@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Search with Gemini",
+  "description": "Adds Gemini as a search engine and auto-fills prompts when using it.",
+  "version": "0.1.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "search-with-gemini@example.com"
+    }
+  },
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Gemini",
+      "keyword": "gem",
+      "search_url": "https://gemini.google.com/?prompt=%s"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
