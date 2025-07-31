@@ -12,7 +12,7 @@
     "search_provider": {
       "name": "Gemini",
       "keyword": "gem",
-      "search_url": "https://gemini.google.com/?prompt=%s"
+      "search_url": "https://gemini.google.com/?prompt={searchTerms}"
     }
   },
   "content_scripts": [
