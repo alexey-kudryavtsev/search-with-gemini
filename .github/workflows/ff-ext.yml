@@ -22,7 +22,7 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run build
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: web-ext-artifacts
         path: ff-ext/web-ext-artifacts
