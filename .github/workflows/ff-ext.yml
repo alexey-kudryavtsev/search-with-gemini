@@ -1,0 +1,28 @@
+name: Firefox Extension CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ff-ext
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: ff-ext/package-lock.json
+    - run: npm ci
+    - run: npm run lint
+    - run: npm run build
+    - uses: actions/upload-artifact@v4
+      with:
+        name: web-ext-artifacts
+        path: ff-ext/web-ext-artifacts

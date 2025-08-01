@@ -1,0 +1,12 @@
+{
+  "name": "search-with-gemini-extension",
+  "version": "0.1.0",
+  "description": "Firefox extension that adds Gemini as a search engine and auto-fills prompts.",
+  "scripts": {
+    "lint": "web-ext lint",
+    "build": "web-ext build -s . -a web-ext-artifacts"
+  },
+  "devDependencies": {
+    "web-ext": "^7.6.0"
+  }
+}
